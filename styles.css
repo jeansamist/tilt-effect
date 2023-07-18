@@ -1,0 +1,76 @@
+/* styles.css */
+.tilt-effect {
+  width: 100%;
+  /* Adjust size as needed */
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  /* Hide the overflow when the element tilts */
+}
+
+.tilt-effect img {
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  width: 150%;
+  /* Adjust size as needed */
+  height: 150vh;
+  object-fit: cover;
+  transition: transform 1s linear;
+  /* Transition property for smooth animation */
+}
+
+
+body {
+  background: #222;
+  overflow: hidden;
+  font-family: "Antonio";
+  margin: 0;
+  padding: 0;
+}
+
+.cursor {
+  position: fixed;
+  z-index: 200;
+  /* background: #ffffff62; */
+  /* opacity: 0.8; */
+  width: 100px;
+  top: 0;
+  left: 0;
+  height: 100px;
+  border-radius: 50%;
+  backdrop-filter: invert(1);
+  transform: translate(-50%, -50%);
+  transition: top 0.1s linear,
+    left 0.1s linear;
+  pointer-events: none;
+}
+
+.tilt-effect>.texts-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 80px;
+  font-weight: bold;
+  color: #fff;
+  height: 103px;
+  /* border: 3px solid #fff; */
+  /* overflow: auto; */
+  overflow: hidden;
+  min-width: 50%;
+  text-align: center;
+  padding: 0 0.5em;
+  transform: translate(-50%, -50%);
+}
+
+.tilt-effect>.texts-container::-webkit-scrollbar {
+  display: none;
+}
+
+.tilt-effect>.texts-container>.texts {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1);
+}
